@@ -532,6 +532,7 @@ class(c)
 plot(c, diagnostic = TRUE)
 ```
 
+# INSTALLATION OF ICER PACKAGE
 
 ```{r}
 install.packages("devtools")
