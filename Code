@@ -1,0 +1,549 @@
+# INSTALLATION OF RAWDIAG PACKAGE
+
+```{r}
+#pkgs <- c('dplyr', 'hexbin', 'protViz', 'RSQLite', 'scales', 'tidyr', 'tidyverse', 'shiny')
+#pkgs <- pkgs[(!pkgs %in% unique(installed.packages()[,'Package']))]
+#if(length(pkgs) > 0){install.packages(pkgs)}
+```
+
+```{r}
+#install.packages('http://fgcz-ms.uzh.ch/~cpanse/rawDiag_0.0.41.tar.gz', repo=NULL)
+```
+
+```{r}
+library(rawDiag)
+```
+# LOADING ALL THE SAMPLES OF EACH GROUP
+
+## CONTROLS
+
+```{r}
+#Controls
+control1 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//QUIQUE//QUIQUE_T1403_190128_001.raw")
+control2 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//QUIQUE//QUIQUE_T1368_190128_001.raw")
+control3 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//QUIQUE//QUIQUE_T1277_190128_001.raw")
+control4 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//QUIQUE//QUIQUE_T1218_190128_001.raw")
+control5 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//QUIQUE//QUIQUE_T1423_190128_001.raw")
+control6 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//QUIQUE//QUIQUE_T1412_190128_001.raw")
+control7 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//QUIQUE//QUIQUE_T1419_190128_001.raw")
+control8 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//QUIQUE//QUIQUE_T404_190128_001.raw")
+control9 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//QUIQUE//QUIQUE_T1377_190128_001.raw")
+```
+## AD
+
+```{r}
+#AD
+AD1 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//AD//QUIQUE_EA1_190128_001.raw")
+AD2 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//AD//QUIQUE_EA2_190128_001.raw")
+AD3 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//AD//QUIQUE_EA3_190128_001.raw")
+AD4 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//AD//QUIQUE_EA4_190128_001.raw")
+AD5 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//AD//QUIQUE_EA5_190128_001.raw")
+AD6 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//AD//QUIQUE_EA6_190128_001.raw")
+AD7 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//AD//QUIQUE_EA7_190128_001.raw")
+AD8 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//AD//QUIQUE_EA8_190128_001.raw")
+AD9 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//AD//QUIQUE_EA9_190128_001.raw")
+```
+## PD
+
+```{r}
+#PD
+PD1 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//PD//QUIQUE_450_190128_001.raw")
+PD2 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//PD//QUIQUE_495_190128_001.raw")
+PD3 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//PD//QUIQUE_501_190128_001.raw")
+PD4 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//PD//QUIQUE_527_190128_001.raw")
+PD5 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//PD//QUIQUE_536_190128_001.raw")
+PD6 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//PD//QUIQUE_537_190128_001.raw")
+PD7 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//PD//QUIQUE_550_190128_001.raw")
+PD8 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//PD//QUIQUE_562_190128_001.raw")
+PD9 <- read.raw("Z://PROYECTOS//172- Tractos Olfact//4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//PD//QUIQUE_636_190128_001.raw")
+```
+# INSTALLATION OF GGPUBR PACKAGE
+
+```{r}
+#install.packages("ggpubr")
+library(ggpubr)
+library(tidyverse)
+library(ggplot2)
+```
+
+# PlotMassDistribution
+
+## Control
+
+```{r}
+#Control
+co1<-PlotMassDistribution(control1, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co2<-PlotMassDistribution(control2, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co3<-PlotMassDistribution(control3, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co4<-PlotMassDistribution(control4, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co5<-PlotMassDistribution(control5, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co6<-PlotMassDistribution(control6, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co7<-PlotMassDistribution(control7, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co8<-PlotMassDistribution(control8, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co9<-PlotMassDistribution(control9, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+#Preparación de cada gráfico
+```
+
+```{r}
+#Para juntar los gráficos
+ggpubr::ggarrange(
+  co1,co2,co3,co4,co5,co6,co7,co8,co9, 
+  labels=c("C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9")
+  )
+```
+## AD
+
+```{r}
+#AD
+ALZ1<-PlotMassDistribution(AD1, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ2<-PlotMassDistribution(AD2, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ3<-PlotMassDistribution(AD3, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ4<-PlotMassDistribution(AD4, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ5<-PlotMassDistribution(AD5, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ6<-PlotMassDistribution(AD6, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ7<-PlotMassDistribution(AD7, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ8<-PlotMassDistribution(AD8, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ9<-PlotMassDistribution(AD9, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+#Preparación de cada gráfico
+```
+
+```{r}
+#Para juntar los gráficos
+ggpubr::ggarrange(
+  ALZ1,ALZ2,ALZ3,ALZ4,ALZ5,ALZ6,ALZ7,ALZ8,ALZ9, 
+  labels=c("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9")
+  )
+```
+## PD
+
+```{r}
+#PD
+PAR1<-PlotMassDistribution(PD1, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR2<-PlotMassDistribution(PD2, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR3<-PlotMassDistribution(PD3, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR4<-PlotMassDistribution(PD4, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR5<-PlotMassDistribution(PD5, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR6<-PlotMassDistribution(PD6, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR7<-PlotMassDistribution(PD7, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR8<-PlotMassDistribution(PD8, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR9<-PlotMassDistribution(PD9, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+#Preparación de cada gráfico
+```
+
+```{r}
+#Para juntar los gráficos
+ggpubr::ggarrange(
+  PAR1,PAR2,PAR3,PAR4,PAR5,PAR6,PAR7,PAR8,PAR9, 
+  labels=c("P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9")
+  )
+```
+# PlotChargeState
+
+## Control
+
+```{r}
+#Control
+co1<-PlotChargeState(control1, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co2<-PlotChargeState(control2, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co3<-PlotChargeState(control3, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co4<-PlotChargeState(control4, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co5<-PlotChargeState(control5, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co6<-PlotChargeState(control6, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co7<-PlotChargeState(control7, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co8<-PlotChargeState(control8, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co9<-PlotChargeState(control9, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+#Preparación de cada gráfico
+```
+
+```{r}
+#Para juntar los gráficos
+ggpubr::ggarrange(
+  co1,co2,co3,co4,co5,co6,co7,co8,co9, 
+  labels=c("C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9")
+  )
+```
+## AD
+
+```{r}
+#AD
+ALZ1<-PlotChargeState(AD1, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ2<-PlotChargeState(AD2, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ3<-PlotChargeState(AD3, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ4<-PlotChargeState(AD4, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ5<-PlotChargeState(AD5, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ6<-PlotChargeState(AD6, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ7<-PlotChargeState(AD7, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ8<-PlotChargeState(AD8, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ9<-PlotChargeState(AD9, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+#Preparación de cada gráfico
+```
+
+```{r}
+#Para juntar los gráficos
+ggpubr::ggarrange(
+  ALZ1,ALZ2,ALZ3,ALZ4,ALZ5,ALZ6,ALZ7,ALZ8,ALZ9, 
+  labels=c("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9")
+  )
+```
+
+## PD
+
+```{r}
+#PD
+PAR1<-PlotChargeState(PD1, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR2<-PlotChargeState(PD2, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR3<-PlotChargeState(PD3, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR4<-PlotChargeState(PD4, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR5<-PlotChargeState(PD5, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR6<-PlotChargeState(PD6, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR7<-PlotChargeState(PD7, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR8<-PlotChargeState(PD8, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR9<-PlotChargeState(PD9, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+#Preparación de cada gráfico
+```
+
+```{r}
+#Para juntar los gráficos
+ggpubr::ggarrange(
+  PAR1,PAR2,PAR3,PAR4,PAR5,PAR6,PAR7,PAR8,PAR9, 
+  labels=c("P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9")
+  )
+```
+
+# PlotCycleTime
+
+## Control
+
+```{r}
+#Control
+co1<-PlotCycleTime(control1, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co2<-PlotCycleTime(control2, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co3<-PlotCycleTime(control3, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co4<-PlotCycleTime(control4, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co5<-PlotCycleTime(control5, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co6<-PlotCycleTime(control6, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co7<-PlotCycleTime(control7, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co8<-PlotCycleTime(control8, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co9<-PlotCycleTime(control9, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+#Preparación de cada gráfico
+```
+
+```{r}
+#Para juntar los gráficos
+ggpubr::ggarrange(
+  co1,co2,co3,co4,co5,co6,co7,co8,co9, 
+  labels=c("C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9")
+  )
+```
+```{r}
+#AD
+ALZ1<-PlotCycleTime(AD1, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ2<-PlotCycleTime(AD2, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ3<-PlotCycleTime(AD3, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ4<-PlotCycleTime(AD4, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ5<-PlotCycleTime(AD5, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ6<-PlotCycleTime(AD6, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ7<-PlotCycleTime(AD7, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ8<-PlotCycleTime(AD8, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ9<-PlotCycleTime(AD9, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+#Preparación de cada gráfico
+```
+
+```{r}
+#Para juntar los gráficos
+ggpubr::ggarrange(
+  ALZ1,ALZ2,ALZ3,ALZ4,ALZ5,ALZ6,ALZ7,ALZ8,ALZ9, 
+  labels=c("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9")
+  )
+```
+
+## PD
+
+```{r}
+#PD
+PAR1<-PlotCycleTime(PD1, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR2<-PlotCycleTime(PD2, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR3<-PlotCycleTime(PD3, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR4<-PlotCycleTime(PD4, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR5<-PlotCycleTime(PD5, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR6<-PlotCycleTime(PD6, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR7<-PlotCycleTime(PD7, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR8<-PlotCycleTime(PD8, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR9<-PlotCycleTime(PD9, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+#Preparación de cada gráfico
+```
+
+```{r}
+#Para juntar los gráficos
+ggpubr::ggarrange(
+  PAR1,PAR2,PAR3,PAR4,PAR5,PAR6,PAR7,PAR8,PAR9, 
+  labels=c("P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9")
+  )
+```
+
+# PlotMassHeatmap
+
+## Control
+
+```{r}
+#Control
+co1<-PlotMassHeatmap(control1, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co2<-PlotMassHeatmap(control2, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co3<-PlotMassHeatmap(control3, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co4<-PlotMassHeatmap(control4, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co5<-PlotMassHeatmap(control5, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co6<-PlotMassHeatmap(control6, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co7<-PlotMassHeatmap(control7, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co8<-PlotMassHeatmap(control8, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co9<-PlotMassHeatmap(control9, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+#Preparación de cada gráfico
+```
+
+```{r}
+#Para juntar los gráficos
+ggpubr::ggarrange(
+  co1,co2,co3,co4,co5,co6,co7,co8,co9, 
+  labels=c("C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9")
+  )
+```
+
+## AD
+
+```{r}
+#AD
+ALZ1<-PlotMassHeatmap(AD1, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ2<-PlotMassHeatmap(AD2, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ3<-PlotMassHeatmap(AD3, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ4<-PlotMassHeatmap(AD4, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ5<-PlotMassHeatmap(AD5, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ6<-PlotMassHeatmap(AD6, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ7<-PlotMassHeatmap(AD7, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ8<-PlotMassHeatmap(AD8, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ9<-PlotMassHeatmap(AD9, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+#Preparación de cada gráfico
+```
+
+```{r}
+#Para juntar los gráficos
+ggpubr::ggarrange(
+  ALZ1,ALZ2,ALZ3,ALZ4,ALZ5,ALZ6,ALZ7,ALZ8,ALZ9, 
+  labels=c("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9")
+  )
+```
+
+## PD
+
+```{r}
+#PD
+PAR1<-PlotMassHeatmap(PD1, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR2<-PlotMassHeatmap(PD2, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR3<-PlotMassHeatmap(PD3, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR4<-PlotMassHeatmap(PD4, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR5<-PlotMassHeatmap(PD5, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR6<-PlotMassHeatmap(PD6, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR7<-PlotMassHeatmap(PD7, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR8<-PlotMassHeatmap(PD8, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR9<-PlotMassHeatmap(PD9, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+#Preparación de cada gráfico
+```
+
+```{r}
+#Para juntar los gráficos
+ggpubr::ggarrange(
+  PAR1,PAR2,PAR3,PAR4,PAR5,PAR6,PAR7,PAR8,PAR9, 
+  labels=c("P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9")
+  )
+```
+
+# PlotTicBasePeak
+
+## Control
+
+```{r}
+#Control
+co1<-PlotTicBasepeak(control1, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co2<-PlotTicBasepeak(control2, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co3<-PlotTicBasepeak(control3, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co4<-PlotTicBasepeak(control4, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co5<-PlotTicBasepeak(control5, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co6<-PlotTicBasepeak(control6, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co7<-PlotTicBasepeak(control7, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co8<-PlotTicBasepeak(control8, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+co9<-PlotTicBasepeak(control9, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+#Preparación de cada gráfico
+```
+
+```{r}
+#Para juntar los gráficos
+ggpubr::ggarrange(
+  co1,co2,co3,co4,co5,co6,co7,co8,co9, 
+  labels=c("C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9")
+  )
+```
+```{r}
+#Control
+PlotTicBasepeak(control1, method = 'trellis')
+PlotTicBasepeak(control2, method = 'trellis')
+PlotTicBasepeak(control3, method = 'trellis')
+PlotTicBasepeak(control4, method = 'trellis')
+PlotTicBasepeak(control5, method = 'trellis')
+PlotTicBasepeak(control6, method = 'trellis')
+PlotTicBasepeak(control7, method = 'trellis')
+PlotTicBasepeak(control8, method = 'trellis')
+PlotTicBasepeak(control9, method = 'trellis')
+#Preparación de cada gráfi
+```
+
+## AD
+
+```{r}
+#AD
+ALZ1<-PlotTicBasepeak(AD1, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ2<-PlotTicBasepeak(AD2, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ3<-PlotTicBasepeak(AD3, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ4<-PlotTicBasepeak(AD4, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ5<-PlotTicBasepeak(AD5, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ6<-PlotTicBasepeak(AD6, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ7<-PlotTicBasepeak(AD7, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ8<-PlotTicBasepeak(AD8, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+ALZ9<-PlotTicBasepeak(AD9, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+#Preparación de cada gráfico
+```
+
+```{r}
+#Para juntar los gráficos
+ggpubr::ggarrange(
+  ALZ1,ALZ2,ALZ3,ALZ4,ALZ5,ALZ6,ALZ7,ALZ8,ALZ9, 
+  labels=c("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9")
+  )
+```
+```{r}
+#
+PlotTicBasepeak(AD1, method = 'trellis')
+PlotTicBasepeak(AD2, method = 'trellis')
+PlotTicBasepeak(AD3, method = 'trellis')
+PlotTicBasepeak(AD4, method = 'trellis')
+PlotTicBasepeak(AD5, method = 'trellis')
+PlotTicBasepeak(AD6, method = 'trellis')
+PlotTicBasepeak(AD7, method = 'trellis')
+PlotTicBasepeak(AD8, method = 'trellis')
+PlotTicBasepeak(AD9, method = 'trellis')
+#Preparación de cada gráfico
+```
+
+## PD
+
+```{r}
+#PD
+PAR1<-PlotTicBasepeak(PD1, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR2<-PlotTicBasepeak(PD2, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR3<-PlotTicBasepeak(PD3, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR4<-PlotTicBasepeak(PD4, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR5<-PlotTicBasepeak(PD5, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR6<-PlotTicBasepeak(PD6, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR7<-PlotTicBasepeak(PD7, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR8<-PlotTicBasepeak(PD8, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+PAR9<-PlotTicBasepeak(PD9, method = 'trellis') + theme(legend.position = 'none') + labs(title = NULL ,subtitle = NULL) + theme(axis.title = element_blank())
+#Preparación de cada gráfico
+```
+
+```{r}
+#Para juntar los gráficos
+ggpubr::ggarrange(
+  PAR1,PAR2,PAR3,PAR4,PAR5,PAR6,PAR7,PAR8,PAR9, 
+  labels=c("P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9")
+  )
+```
+
+```{r}
+#PD
+PlotTicBasepeak(PD1, method = 'trellis')
+PlotTicBasepeak(PD2, method = 'trellis')
+PlotTicBasepeak(PD3, method = 'trellis')
+PlotTicBasepeak(PD4, method = 'trellis')
+PlotTicBasepeak(PD5, method = 'trellis')
+PlotTicBasepeak(PD6, method = 'trellis')
+PlotTicBasepeak(PD7, method = 'trellis')
+PlotTicBasepeak(PD8, method = 'trellis')
+PlotTicBasepeak(PD9, method = 'trellis')
+#Preparación de cada gráfico
+```
+
+```{r}
+install.packages('http://fgcz-ms.uzh.ch/~cpanse/rawrr/rawrr_1.1.13.tar.gz', repo=NULL)
+rawrr::installRawFileReaderDLLs()
+rawrr::installRawrrExe()
+```
+
+# CONTROL 1
+
+```{r}
+library(rawrr)
+rawfile <- file.path("E://4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//QUIQUE//QUIQUE_T404_190128_001.raw")
+a <- c(8483, 10002, 10773, 11677, 11566, 12103, 12757, 13440, 15025, 16082, 16501) 
+rawrr::installRawFileReaderDLLs()
+rawrr::installRawrrExe()
+S <- rawrr::readSpectrum(rawfile = rawfile, scan =a)
+class(S)
+```
+```{r}
+class(S[[1]])
+```
+```{r}
+summary(S[[1]])
+```
+```{r}
+plot(S[[1]][["centroid.mZ"]],S[[1]][["centroid.intensity"]], 
+     xlab = "Centroid m/z", ylab = "Centroid Intensity", type="h", xlim = c(50,1600), ylim = c(0,1000000))
+
+#Los valores de los ejes están escogidos para que la gráfica represente todos los valores que hay en medio.
+```
+
+```{r}
+plot(S[[1]], centroidStream = TRUE)
+```
+
+```{r}
+plot(S[[2]][["centroid.mZ"]],S[[2]][["centroid.intensity"]], 
+     xlab = "Centroid m/z", ylab = "Centroid Intensity", type="h", xlim = c(50,1600), ylim = c(0,50000))
+```
+```{r}
+plot(S[[2]], centroidStream = TRUE)
+```
+
+```{r}
+plot(rawrr::readChromatogram(rawfile = rawfile, type= "tic"))
+#Total Ion Chromatogram
+```
+```{r}
+plot(rawrr::readChromatogram(rawfile = rawfile, type= "bpc"))
+#Base Peak Chromatogram
+```
+```{r}
+rawfile1 <- file.path("E://4- Análisis Bioinformático e Interpretación de Resultados//1- Datos RAW//QUIQUE//QUIQUE_T404_190128_001.raw")
+iRT.mZ <- c(476.1460, 536.1873, 611.7428, 625.7584, 633.7120, 658.7273,
+            672.7171, 672.7430, 688.2277, 715.7250, 765.8200)
+c<- rawrr::readChromatogram(rawfile1, mass = iRT.mZ, tol = 10, type = 'xic', filter = 'ms')
+#Extracted Ion Chromatogram
+class(c)
+```
+
+```{r}
+plot(c, diagnostic = TRUE)
+```
+
+
+```{r}
+install.packages("devtools")
+devtools::install_github("mathiaskalxdorf/IceR")
+BiocManager::install('cleaver')
+BiocManager::install('PECA')
+install.packages('shiny')
+install.packages('rJava')
+#Instalar Java Oracle si se requiere
+```
+
+```{r}
+library(IceR)
+runIceR()
+```
